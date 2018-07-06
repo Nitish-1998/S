@@ -106,7 +106,7 @@
 #d = max(a,b,c)
 #print('Maximum number is:',d)
 
-
+#========Small Example=========================
 #def sumall(l):
 #    sum=0
 #    for ele in a:
@@ -115,7 +115,7 @@
 #a =[10,20,30,40,50,60,70,80,90]
 #print(sumall(a))
 
-
+#========Even Example==========================
 #def evn(l):
 #    for i in range(0,len(l)-1):
 #        if l[i]%2==0:
@@ -124,19 +124,42 @@
 #            i=i+1
 #l=[2,3,4,5,6,7,8,9]
 #evn(l)
-
+#========Hello while===========================
 #for i in range(0,10):
 #    print(i+1,'Hello')
-
+#========Swap number Example===================
 #i=0
 #while i<10:
 #    i=i+1
-def swap(a,b):
-    c=0;
-    c=a
-    a=b
-    b=c
-    print(a,b)
-a=int(input('Enter a :'))
-b=int(input('Enter b :'))
-swap(a,b)
+#def swap(a,b):
+#    c=0;
+#    c=a
+#    a=b
+#    b=c
+#    print(a,b)
+#a=int(input('Enter a :'))
+#b=int(input('Enter b :'))
+#swap(a,b)
+#====== Append Example ==========================
+#a = [10, 20, 30]
+#a.append(50)
+#print(a)
+#======= Inser Example ==========================
+#a = [10, 20, 30 ]
+#a.insert(1,25)
+#print(a)
+#======== Append Example ========================
+#a = [10, 20, 30]
+#a.append('Ram')
+#print(a)
+#======== List access Example ==================
+#a = [10, 20, 30, [1, 2, ['A', 'B']]]
+#print(a[3][1])
+#print(a[3][2][1])
+
+#============ Insert Example ==================
+a = [10, 20, 30 ]
+a.insert(1,40)
+print(a)
+a.insert(3,'Ram')
+print(a)
