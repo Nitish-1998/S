@@ -1,26 +1,37 @@
-from default import spy_name, spy_age, spy_rating
+from default import spy
 import sys
 
 ##==============================================Add friends================================================================
-def add_friend(total):
-    new_name = input('Enter your friend name: ')
-    new_age = int(input('Enter your friend age: '))
-    new_rating = float(input('Enter your ratings: '))
+def add_friend():
+    new_friend = {'name' : ' ',
+                  'sal'  : ' ',
+                  'age'  : ' ',
+                  'rating' : ' '
+                  }
+    new_friend['name'] = input('Enter your friend name : ')
+    new_friend['sal'] = input('Enter your friend salutation: ')
+    new_friend['age'] = int(input('Enter your friend age : '))
+    new_friend['rating'] = float(input('Enter your rating : '))
+    #new_name = input('Enter your friend name: ')
+    #new_age = int(input('Enter your friend age: '))
+    #new_rating = float(input('Enter your ratings: '))
 #    present_status = True
-    if len(new_name) > 0 and new_name.isalpha():
-        friends_name.append(new_name)
-        friends_age.append(new_age)
-        friends_rating.append(new_rating)
-        friends_is_onine.append(True)
+    if len(new_friend['name']) > 0 and new_friend['name'].isalpha() and new_friend['age']>=13 and new_friend['age']<=60:
+        friends.append(new_friend['name'])
+        friends.append(new_friend['sal'])
+        friends.append(new_friend['age'])
+        friends.append(new_friend['rating'])
+        friends.append(True)
+        #print("%s succesfully added as your friend." %new_name)
     else:
         print("your entered details dosen't match with ur friend ")
 
-    return len(friends_name)
+    return len(friends)
 #===============================================Start_chat function========================================================
-def start_chat(spy_name,spy_age,spy_rating):
+def start_chat(spy):
 
     current_status_message = None
-    total = None
+    t = None
     show_menu = True
 
     while show_menu == True:
@@ -37,8 +48,9 @@ def start_chat(spy_name,spy_age,spy_rating):
             print('You have set %s as your status'%current_status_message)
         elif menu_choice==2:
             print('You select to add friend')
-            total = add_friend(total)
-            print('You have %d total friends now'%total)
+            t = add_friend()
+            #print("%s succesfully added as your friend" %friends[len(new_friend['name']) - 1]
+            print("You have %d total friends now" %t)
         elif menu_choice == 0:
             show_menu = False
             sys.exit()
@@ -71,7 +83,7 @@ def add_status(current_status_message):
 
        status_sel = int(input('Enter the status of your choice: '))
 
-       if status_sel < len(STATUS_MSG):
+       if status_sel <= len(STATUS_MSG):
            updated_status_message = STATUS_MSG[status_sel - 1]
 
        else:
@@ -85,31 +97,28 @@ def add_status(current_status_message):
 #===============================================Main program=========================================================
 question= 'Do you want to continue with ur default user(y/n)? '
 choice=input(question)
-friends_name = []
-friends_age = []
-friends_rating = []
-friends_is_onine = []
+friends=[]
 STATUS_MSG = ["busy","gym","can't talk"]                                        #Status message listS
 if choice =='Y' or choice == 'y':
-    start_chat(spy_name, spy_age, spy_rating)
+    start_chat(spy)
 
 elif choice =='N' or choice =='n':
 
     print('Welcome to spychat \nYou must tell me your name first.')
-    spy_name = input('Enter your name:')
-    if len(spy_name)>0 and spy_name.isalpha():
-        spy_salutation = input('Hello ' +spy_name + ' What should i call u (Mr/Miss?):')
-        spy_name = spy_salutation + ' ' + spy_name
-        print('Welcome '+ spy_name +' I need some more details before you get started ' )
-        spy_age = input('Enter ur Age: ')
-        spy_age = int(spy_age)
-        if  spy_age>13 and spy_age<60:
-            spy_rating = input('Enter ur Ratings: ')
-            spy_rating = float(spy_rating)
-            if spy_rating<5.0:
-                print('Profile created succesfully \nName: ' +spy_name  + ' \nAge: ' +str(spy_age)  + ' \nRating: ' +str(spy_rating) )
+    spy['name'] = input('Enter your name:')
+    if len(spy['name'])>0 and spy['name'].isalpha():
+        spy['salutation'] = input('Hello ' +spy['name'] + ' What should i call u (Mr/Miss?):')
+        spy['name'] = spy['salutation'] + ' ' + spy['name']
+        print('Welcome '+ spy['name'] +' I need some more details before you get started ' )
+        spy['age'] = input('Enter ur Age: ')
+        spy['age'] = int(spy['age'])
+        if  spy['age']>13 and spy['age']<60:
+            spy['rating'] = input('Enter ur Ratings: ')
+            spy['rating'] = float(spy['rating'])
+            if spy['rating']<5.0:
+                print('Profile created succesfully \nName: ' +spy['name']  + ' \nAge: ' +str(spy['age'])  + ' \nRating: ' +str(spy['rating']) )
                 print('Proud to have you onboard')
-                start_chat(spy_name,spy_age,spy_rating)
+                start_chat(spy)
 
             else:
                 print("Invalid ratings")
