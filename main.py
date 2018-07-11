@@ -1,27 +1,29 @@
 from default import spy
 import sys
 
+##==============================================Show friends ==============================================================
+def show():
+    print(friends)
+    return len(friends)
 ##==============================================Add friends================================================================
 def add_friend():
     new_friend = {'name' : ' ',
                   'sal'  : ' ',
                   'age'  : ' ',
-                  'rating' : ' '
+                  'rating' : ' ',
+                  'is_online' : True
                   }
     new_friend['name'] = input('Enter your friend name : ')
     new_friend['sal'] = input('Enter your friend salutation: ')
     new_friend['age'] = int(input('Enter your friend age : '))
     new_friend['rating'] = float(input('Enter your rating : '))
+
     #new_name = input('Enter your friend name: ')
     #new_age = int(input('Enter your friend age: '))
     #new_rating = float(input('Enter your ratings: '))
 #    present_status = True
     if len(new_friend['name']) > 0 and new_friend['name'].isalpha() and new_friend['age']>=13 and new_friend['age']<=60:
-        friends.append(new_friend['name'])
-        friends.append(new_friend['sal'])
-        friends.append(new_friend['age'])
-        friends.append(new_friend['rating'])
-        friends.append(True)
+        friends.append(new_friend)
         #print("%s succesfully added as your friend." %new_name)
     else:
         print("your entered details dosen't match with ur friend ")
@@ -33,12 +35,14 @@ def start_chat(spy):
     current_status_message = None
     t = None
     show_menu = True
+    a = None
 
     while show_menu == True:
 
         menu ="""===============Menu=================
                  1.Status update.
                  2.Add friend.
+                 3.Show friends.
                  0.exit.
                  Enter your choice: """
         menu_choice=int(input(menu))
@@ -49,8 +53,11 @@ def start_chat(spy):
         elif menu_choice==2:
             print('You select to add friend')
             t = add_friend()
-            #print("%s succesfully added as your friend" %friends[len(new_friend['name']) - 1]
+            print("%s succesfully added as your friend" %friends[len(friends)-1]['name'])
             print("You have %d total friends now" %t)
+        elif menu_choice == 3:
+            print('You have selected to Show friends')
+            a = show()
         elif menu_choice == 0:
             show_menu = False
             sys.exit()

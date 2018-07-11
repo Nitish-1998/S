@@ -157,9 +157,41 @@
 #print(a[3][1])
 #print(a[3][2][1])
 
-#============ Insert Example ==================
-a = [10, 20, 30 ]
-a.insert(1,40)
-print(a)
-a.insert(3,'Ram')
-print(a)
+#============ Insert Example ==================#
+#a = [10, 20, 30 ]
+#a.insert(1,40)
+#print(a)
+#a.insert(3,'Ram')
+#print(a)
+##============ Dictonary examples with lists ================#
+#my_list = []
+#my_dict_1 = { 'name' : 'abs',
+
+#              'roll' : 123
+#            }
+#my_dict_2= { 'name' : 'abx',
+#             'roll' : 1234
+#           }
+#my_dict_3 = { 'name' : 'absas',
+#              'roll' : 1235
+#            }
+#my_list.append(my_dict_1)
+#my_list.append(my_dict_2)
+#my_list.append(my_dict_3)
+#print(my_list[1]['name'],my_list[1]['roll'] )
+#print(my_list)
+##============= Slicing Example =================================
+
+#a=[1,2,3,4,5,6,7,8,9]
+#print(a[1:4])
+
+#a = ['cat' , 'dog' , 'rat' , 'bird' , 'hen']
+#print(a[:3])
+#print(a[3:])
+#print(a[2:3])
+
+#a = 'India'
+#print(a[1:3])
+#print(a[2:])
+#print(a[:4])
+#print(a[:])
