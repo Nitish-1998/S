@@ -195,3 +195,134 @@
 #print(a[2:])
 #print(a[:4])
 #print(a[:])
+
+#================= Class Example ================================
+##1
+#class student:
+#    def __init__(self,name,age,year):
+#        self.name = name
+#        self.age = age
+#        self.year = year
+#    def get_name(self):
+#
+
+#    def get_age(self):
+#        print(self.age)
+#
+#    def change_year(self):
+#        self.year = self.year + 1
+#s1 = student('Roy' , 20 , 1)
+#s1.get_name()
+#s1.get_age()
+#print(s1.year)
+#s1.change_year()
+#print(s1.year)
+
+#s2 = student('Ram' , 22 , 4)
+#s2.get_name()
+#s1.get_name()
+#s2.get_age()
+#print(s2.year)
+#s2.change_year()
+#print(s2.year)
+
+##2
+
+#class student:
+#    branch = 'cse'                                                              #Class member
+#    def __init__(self,name,age,year):                                           #Constructer
+#        self.name = name                                                        #Object member
+#        self.age = age
+#        self.year = year
+#    def get_name(self):
+#        print(self.name)
+#
+#    def get_age(self):
+#        print(self.age)
+#
+#    def change_year(self):
+#        self.year = self.year + 1
+#s1 = student('Roy' , 20 , 1)
+#s1.get_name()
+#s1.get_age()
+#print(s1.year)
+#s1.change_year()
+#print(s1.year)
+
+#s2 = student('Ram' , 22 , 4)
+#s2.get_name()
+#s1.get_name()
+#s2.get_age()
+#print(s2.year)
+#s2.change_year()
+#print(s2.year)
+#print(s1.branch)
+#print(s2.branch)
+#s1.branch = 'Mech'
+#print(s2.branch)
+#s2.branch = 'Civil'
+#print(s1.branch)
+#print(s2.branch)
+##3
+#class Student:
+#    branch = 'cse'
+#    count = 0                                                                   #Class member
+#    def __init__(self,name,age,year):                                           #Constructer
+#        self.name = name                                                        #Object member
+#        self.age = age
+#        self.year = year
+#        Student.count = Student.count +  1
+#
+#    def get_name(self):
+#        print(self.name)
+#
+#    def get_age(self):
+#        print(self.age)
+
+#    def change_year(self):
+#        self.year = self.year + 1
+#s1 = Student('Roy' , 20 , 1)
+#s1.get_name()
+#s1.get_age()
+#print(s1.year)
+#s1.change_year()
+#print(s1.year)
+
+#s2 = Student('Ram' , 22 , 4)
+#s2.get_name()
+#s1.get_name()
+#s2.get_age()
+#print(s2.year)
+#s2.change_year()
+#print(s2.year)
+#print(s1.branch)
+#print(s2.branch)
+#s1.branch = 'Mech'
+#print(s2.branch)
+#s2.branch = 'Civil'
+#print(s1.branch)
+#print(s2.branch)
+#print(Student.count)
+
+class Employee:
+    total_employee = 0
+    def __init__(self,name,salary):
+        self.name = name
+        self.salary = salary
+        Employee.total_employee = Employee.total_employee + 1
+
+    def display_employee(self):
+        print(self.name)
+        print(self.salary)
+
+    def display_count(self):
+        print(Employee.total_employee)
+
+e1 = Employee('Ram' , 20000)
+e1.display_employee()
+e1.display_count()
+
+e2 = Employee('Shyam' , 30000)
+e2.display_employee()
+e2.display_count()
+                
