@@ -304,25 +304,80 @@
 #print(s2.branch)
 #print(Student.count)
 
-class Employee:
-    total_employee = 0
-    def __init__(self,name,salary):
-        self.name = name
-        self.salary = salary
-        Employee.total_employee = Employee.total_employee + 1
+##3
 
-    def display_employee(self):
-        print(self.name)
-        print(self.salary)
+#class Employee:
+#    total_employee = 0
+#    def __init__(self,name,salary):
+#        self.name = name
+#        self.salary = salary
+#        Employee.total_employee = Employee.total_employee + 1
+#
+#    def display_employee(self):
+#        print(self.name)
+#        print(self.salary)
+#
+#    def display_count(self):
+#
+#e1 = Employee('Ram' , 20000)
+#e1.display_employee()
+#e1.display_count()
+#
+#e2 = Employee('Shyam' , 30000)
+#e2.display_employee()
+#e2.display_count()
 
-    def display_count(self):
-        print(Employee.total_employee)
+##4 Single Inheritance
 
-e1 = Employee('Ram' , 20000)
-e1.display_employee()
-e1.display_count()
+#class Parent:
+#    def __init__(self):
+#        print('calling parent constructer')
+#    def parent_method(self):
+#        print('calling parent method ')
+#class Child(Parent):                                                           #Single inheritance syntax
+#    def __init__(self):
+#        print('calling child constructer')
+#    def child_method(self):
+#        print('calling child method')
+#c = Child()
+#c.child_method()
+#c.parent_method()
+#p = Parent()
+#p.parent_method()
+#p.child_method()
 
-e2 = Employee('Shyam' , 30000)
-e2.display_employee()
-e2.display_count()
-                
+##5 Stack Implementation
+#class Stack:
+#        self.item = []
+#    def isempty(self):
+#        return self.item == []
+#    def push(self,n):
+#        self.item.append(n)
+#    def pop(self):
+#        return self.item.pop()
+#    def size(self):
+#        return len(self.item)
+#s = Stack()
+#print(s.isempty())
+#s.push(10)
+#s.push(20)
+#s.push(30)
+#print("Size of Stack :- %d " %s.size())
+#print(s.pop() , s.pop() , s.pop() )
+
+class Person:
+    def __init__(self,first,last):
+        self.firstname = first
+        self.lastname = last
+    def get_name(self):
+        return self.firstname + ' ' + self.lastname
+class Employee(Person):
+    def __init__(self,first,last,empid):
+        super().__init__(first,last)                           ##Or             Person.__init__(self,fist,last)
+        self.empid = empid
+    def get_emp(self):
+        return self.get_name() + " " + self.empid
+p = Person('virat','kholi')
+e = Employee('Leo' , 'Messi' , '1007')
+print(p.get_name())
+print(e.get_emp())
