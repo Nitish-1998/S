@@ -365,19 +365,50 @@
 #print("Size of Stack :- %d " %s.size())
 #print(s.pop() , s.pop() , s.pop() )
 
-class Person:
-    def __init__(self,first,last):
-        self.firstname = first
-        self.lastname = last
-    def get_name(self):
-        return self.firstname + ' ' + self.lastname
-class Employee(Person):
-    def __init__(self,first,last,empid):
-        super().__init__(first,last)                           ##Or             Person.__init__(self,fist,last)
-        self.empid = empid
-    def get_emp(self):
-        return self.get_name() + " " + self.empid
-p = Person('virat','kholi')
-e = Employee('Leo' , 'Messi' , '1007')
-print(p.get_name())
-print(e.get_emp())
+#class Person:
+#    def __init__(self,first,last):
+#        self.firstname = first
+#        self.lastname = last
+#    def get_name(self):
+#        return self.firstname + ' ' + self.lastname
+#class Employee(Person):
+#    def __init__(self,first,last,empid):
+#        super().__init__(first,last)                           ##Or             Person.__init__(self,fist,last)
+#        self.empid = empid
+#    def get_emp(self):
+#        return self.get_name() + " " + self.empid
+#p = Person('virat','kholi')
+#e = Employee('Leo' , 'Messi' , '1007')
+#print(p.get_name())
+#print(e.get_emp())
+###############Sum of four numbers############################
+#n = []
+#for i in range(0,4):
+#    a = int(input('Enter nos.: '))
+#    n.append(a)
+#s = 0
+#for ele in n:
+#    s = s + ele
+#print(s)
+#
+#numArray = map(int, input().split()) # Get the input
+#sum_integer = 0
+
+#for number in numArray:
+#    sum_integer += number
+#print(sum_integer)
+########### Extend examples############################
+#a = [10,20,30]
+#b = ['A','B','C']
+#a.extend(b)
+#print(a)
+############ Pop example #############################
+#a = [10,20,30]
+#b = ['A','B','C']
+#a.pop(1)
+#print(a)
+############ Remove example #########################
+a=[10 , 20 , 'cow' , 'ram' , 4.5 , 'cOw']
+a.remove('cOw')
+print(a)
+############
