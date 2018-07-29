@@ -346,7 +346,7 @@
 #p.parent_method()
 #p.child_method()
 
-##5 Stack Implementation
+################# 5 Stack Implementation ##########################################
 #class Stack:
 #        self.item = []
 #    def isempty(self):
@@ -408,7 +408,110 @@
 #a.pop(1)
 #print(a)
 ############ Remove example #########################
-a=[10 , 20 , 'cow' , 'ram' , 4.5 , 'cOw']
-a.remove('cOw')
+#a=[10 , 20 , 'cow' , 'ram' , 4.5 , 'cOw']
+#a.remove('cOw')
+#print(a)
+############# Sort example ##########################
+#a = [15 , 18 , 19 ,10 , 6 , 3 , 0 , 9 ]
+#print(a)
+#print(a.sort())
+#print(a)
+#print(a)
+############# Sorted Example ########################
+#a = [15 , 18 , 19 ,10 , 6 , 3 , 0 , 9 ]
+#print(a)
+#print(sorted(a))
+#print(a)
+#print(a)
+#b = sorted(a)
+#print(a)
+#print(b)
+############# Sorted 2nd EXample ######################
+#a = [15,18,19,10,6,3,0,9]
+#print(a)
+#b = sorted(a,reverse = True)
+#print(a)
+#print(b)
+############## lambda example ########################
+#add = lambda x,y : x+y
+#print(add(2,3))
+############ Lambda 2nd Example************************
+#def temp(cl):
+#    f = (9/5) *cl + 32
+#    return f
+#cl = float(input("Enter degree in celcius: "))
+#print("Degree celcius= %d  \t Degree Farenhite= %.1f" %(cl ,temp(cl)))
+#*****By lambda funtion ******************************
+#temp = lambda cl : (9/5)*cl +32
+#print(temp(45))
+#***********Celcius to fahrenhiet list style########################
+#def temp(ele):
+#    f = (9/5)*ele +32
+#    return f
+#cel = [39.2 , 37.3 , 37.8 , 45]
+#fh = []
+#for ele in cel:
+#    temp(ele)
+#    a = temp(ele)
+#    fh.append(a)
+#    print('fherenhiet= %.1f'%temp(ele))
+#print(cel)
+#print(fh)
+#######By Lamda function #######################################
+#celcius = [39.2 , 37.3 , 37.8 , 45]
+#f = map(lambda x :(9/5)*x+32 , celcius)
+#fh = []
+#for ele in f:
+#    #print(ele)
+#    fh.append(ele)
+#print(fh)
+############### Map function ###########################
+#def sqr(n):
+#    return n*n
+#numbers = [2 ,4 , 8 , 9 , 6]
+#s = map(sqr,numbers)
+#print(list(s))
+############# By lambda map function#####################
+#numbers = [2 ,4 , 8 , 9 , 6]
+#s = map(lambda x : x*x , numbers)
+#print(list(s))
+############## Perfect square ###########################
+#import math
+#def is_perfect(n):
+#    s = math.sqrt(n)
+#    s = int(s)
+#    return s*s == n
+#def is_fibo(n):
+#    if is_perfect(5*n*n+4) or is_perfect(5*n*n-4):
+#        print('%d is in fibonacci series'%n)
+#    else:
+#        print('%d is not in fibonacci'%n)
+#a = int(input('Enter any no : \n'))
+#is_fibo(a)
+############# Queue Implementation #######################
+#class queue:
+#    def __init__(self):
+#        self.items = []
+#    def isempty(self):
+#        return self.items == []
+#    def enqueue(self,n):
+#        self.items.insert(0 , n)
+#    def dequeue(self):
+#        self.items.pop()
+#    def size(self):
+#        return len(self.item)
+#q = queue()
+#print(q.isempty())
+#q.enqueue(10)
+#q.enqueue('Ram')
+#q.enqueue(4.5)
+#print(q.items)
+#q.dequeue()
+#print(q.items)
+#print(q.items[0:1])
+#print(q.items[1])
+############### free implement ###############################
+a = int(input("Enter any number: "))
+b = raw_input("enter any string: ")
 print(a)
-############
+print(b)

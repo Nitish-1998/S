@@ -3,6 +3,19 @@ from default import s
 from default import friends
 import sys
 
+################################################ Select_a_friend ##########################################################
+def Select_a_friend():
+    item_num = 0
+    for frnd in friend:
+        print('%d. %s'%(item_num +1,frnd.name))
+        item_num = item_num +1
+    friend_choice = int(input('Enter a friend of your choice:  '))
+    frnd_pos = friend_choice - 1
+    return frnd_pos
+
+
+
+
 ##==============================================Show friends ==============================================================
 def show():
     for ele in friends:
@@ -10,8 +23,8 @@ def show():
 ##==============================================Add friends================================================================
 def add_friend():
     new_friend = Spy("", "" , 0, 0.0)
-    new_friend.name  = input('Enter your friend name : ')
-    new_friend.salutation = input('Enter your friend salutation: ')
+    new_friend.name  = raw_input('Enter your friend name : ')
+    new_friend.salutation = raw_input('Enter your friend salutation: ')
     new_friend.age  = int(input('Enter your friend age : '))
     new_friend.rating = float(input('Enter your rating : '))
 
@@ -69,9 +82,9 @@ def add_status(current_status_message):
         print('Your status is \n %s'%current_status_message)
     else:
         print('You don\'t have any current status')
-    default = input('Do you want to select from older/default status  (y/n)?')  #asking user choice
+    default = raw_input('Do you want to select from older/default status  (y/n)?')  #asking user choice
     if default.upper() == 'N':
-       new_status_message = input('What on your mind?')                         #reading new status
+       new_status_message = raw_input('What on your mind?')                         #reading new status
 
        if len(new_status_message) > 0:                                          #validation
           updated_status_message = new_status_message
@@ -100,7 +113,7 @@ def add_status(current_status_message):
 
 #===============================================Main program=========================================================
 question= 'Do you want to continue with ur default user(y/n)? '
-choice=input(question)
+choice=raw_input(question)
 STATUS_MSG = ["busy","gym","can't talk"]                                        #Status message listS
 if choice =='Y' or choice == 'y':
     start_chat(s)
@@ -108,9 +121,9 @@ if choice =='Y' or choice == 'y':
 elif choice =='N' or choice =='n':
 
     print('Welcome to spychat \nYou must tell me your name first.')
-    s.name = input('Enter your name:')
+    s.name = raw_input('Enter your name:')
     if len(s.name>0 and s.name.isalpha()):
-        s.name = input('Hello ' +s.name + ' What should i call u (Mr/Miss?):')
+        s.name = raw_input('Hello ' +s.name + ' What should i call u (Mr/Miss?):')
         s.name = s.salutation + ' ' + s.name
         print('Welcome '+ s.name +' I need some more details before you get started ' )
         s.age = input('Enter ur Age: ')
