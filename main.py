@@ -2,7 +2,7 @@ from default import Spy
 from default import s
 from default import friends
 import sys
-
+from steganograpy.steganography import Steganography
 ################################################ Select_a_friend ##########################################################
 def Select_a_friend():
     item_num = 0
@@ -12,9 +12,20 @@ def Select_a_friend():
     friend_choice = int(input('Enter a friend of your choice:  '))
     frnd_pos = friend_choice - 1
     return frnd_pos
-
-
-
+############################################## Send Message ##############################################################
+def send_message():
+    friend_choice = Select_a_friend()
+    original_img = raw_input("Enter the name of your image: ")
+    output_path = "output.jpg"
+    text  = raw_input("Enter your secreat message: ")
+    Steganography.encode(original_img , output_path , text)
+    print("Your message has been send successfully")
+############################################# Read message ####################################################################
+def read_message():
+    sender = Select_a_friend()
+    output_path = raw_input('What is the name of your file: ')
+    secret_text = Steganography.decode(output_path)
+    print(friends[sender].name + " : " + secret_text)
 
 ##==============================================Show friends ==============================================================
 def show():
@@ -53,6 +64,8 @@ def start_chat(s):
                  1.Status update.
                  2.Add friend.
                  3.Show friends.
+                 4.Send message.
+                 5.Read message
                  0.exit.
                  Enter your choice: """
         menu_choice=int(input(menu))
@@ -68,6 +81,10 @@ def start_chat(s):
         elif menu_choice == 3:
             print('You have selected to Show friends')
             a = show()
+        elif menu_choice == 4:
+            send_message()
+        elif menu_choice == 5:
+            read_message()
         elif menu_choice == 0:
             show_menu = False
             sys.exit()

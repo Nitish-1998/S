@@ -106,12 +106,11 @@
 #d = max(a,b,c)
 #print('Maximum number is:',d)
 
-#========Small Example=========================
-#def sumall(l):
+#========Sum all Example=========================
+#def sumall(a):
 #    sum=0
 #    for ele in a:
-#        sum = sum + ele
-#    return sum
+##    return sum
 #a =[10,20,30,40,50,60,70,80,90]
 #print(sumall(a))
 
@@ -506,12 +505,52 @@
 #q.enqueue('Ram')
 #q.enqueue(4.5)
 #print(q.items)
-#q.dequeue()
+#q.dequeue()cd
 #print(q.items)
 #print(q.items[0:1])
 #print(q.items[1])
-############### free implement ###############################
-a = int(input("Enter any number: "))
-b = raw_input("enter any string: ")
-print(a)
-print(b)
+############### free implement python 2###############################
+#a = int(input("Enter any number: "))
+#b = raw_input("enter any string: ")
+#print(a)
+#print(b)
+############## Linear search #########################################
+#def linear_srch(a,item):
+#    found = False
+#    for ele in a:
+#        if ele == item:
+#            found = True
+#    return found
+#a = [10,80,92,36,45,39,52]
+#item = input('Enter any no. u want to search: ')
+#print(linear_srch(a,item))
+############## binary search ######################################
+#def binary_srch(a,item):
+#    found = False
+#    f = 0
+#    l = len(a) - 1
+#    while f<=l and not found:
+#        mid = (f+l)/2
+#        if a[mid] == item:
+#            found = True
+#        else:
+#            if item > a[mid]:
+#                f = mid +1
+#            else:
+#                l = mid - 1
+#
+#    return  found
+#a = [10,20,30,40,50,60,70]
+#item = input("Enter no. do u want to search: ")
+#print(binary_srch(a,item))
+###################### Bubble sort ###############################################
+def bubble_sort(a):
+    for passnum in range(len(a)-1,0,-1):
+        for i in range(passnum):
+            if a[i] > a[i+1]:
+                temp = a[i]
+                a[i] = a[i+1]
+                a[i+1] = temp
+a = [40,30,20,10,9,62,45,35]
+bubble_sort(a)
+print a
