@@ -544,13 +544,12 @@
 #item = input("Enter no. do u want to search: ")
 #print(binary_srch(a,item))
 ###################### Bubble sort ###############################################
-def bubble_sort(a):
-    for passnum in range(len(a)-1,0,-1):
-        for i in range(passnum):
-            if a[i] > a[i+1]:
-                temp = a[i]
-                a[i] = a[i+1]
-                a[i+1] = temp
-a = [40,30,20,10,9,62,45,35]
-bubble_sort(a)
-print a
+#def bubble_sort(a):
+#    for passnum in range(len(a)-1,0,-1):
+#        for i in range(passnum):
+#            if a[i] > a[i+1]:
+#                temp = a[i]
+#                a[i+1] = temp
+#a = [40,30,20,10,9,62,45,35]
+#bubble_sort(a)
+#print a

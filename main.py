@@ -2,7 +2,15 @@ from default import Spy
 from default import s
 from default import friends
 import sys
-from steganograpy.steganography import Steganography
+from steganography.steganography import Steganography
+import csv
+##################### Load friend ##########################################################################################
+def load_friends():
+    with open('db.csv','rb') as frnd_data:
+        reader = csv.reader(frnd_data)
+        for row in reader:
+            new_friend = Spy(row[0] , row[1] , row[2] , row[3])
+            friends.append(new_friend)
 ################################################ Select_a_friend ##########################################################
 def Select_a_friend():
     item_num = 0
@@ -45,6 +53,9 @@ def add_friend():
 #    present_status = True
     if len(new_friend.name) > 0 and new_friend.name.isalpha() and new_friend.age>=13 and new_friend.age<=60:
         friends.append(new_friend)
+        with open('db.csv','a') as frnd_data:
+            writer = csv.writer(frnd_data)
+            writer.writerow([new_friend.name , new_friend.salutation , new_friend.age , new_friend.rating])
         #print("%s succesfully added as your friend." %new_name)
     else:
         print("your entered details dosen't match with ur friend ")
