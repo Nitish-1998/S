@@ -150,7 +150,7 @@ elif choice =='N' or choice =='n':
 
     print('Welcome to spychat \nYou must tell me your name first.')
     s.name = raw_input('Enter your name:')
-    if len(s.name>0 and s.name.isalpha()):
+    if len(s.name)>0 and s.name.isalpha():
         s.name = raw_input('Hello ' +s.name + ' What should i call u (Mr/Miss?):')
         s.name = s.salutation + ' ' + s.name
         print('Welcome '+ s.name +' I need some more details before you get started ' )
